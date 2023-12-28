@@ -7,7 +7,7 @@ const chatRoom = document.querySelector("#room");
 
 const activity = document.querySelector(".activity");
 const usersList = document.querySelector(".user-list");
-const userList = document.querySelector(".room-list");
+const roomList = document.querySelector(".room-list");
 const chatDisplay = document.querySelector(".chat-display");
 
 // sending message
@@ -78,7 +78,7 @@ socket.on("activity", (name) => {
   }, 3000);
 });
 
-socket.on("userlist", ({ users }) => {
+socket.on("userList", ({ users }) => {
   showUsers(users);
 });
 
@@ -104,7 +104,7 @@ function showRooms(rooms) {
   if (rooms) {
     roomList.innerHTML = `<em>Active Rooms:</em>`;
     rooms.forEach((room, i) => {
-      roomList.textContent += ` ${room.name}`;
+      roomList.textContent += ` ${room}`;
       if (rooms.length > 1 && i !== rooms.length - 1) {
         roomList.textContent += ",";
       }

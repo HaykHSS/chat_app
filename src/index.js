@@ -79,7 +79,7 @@ io.on("connection", (socket) => {
     });
 
     // Update rooms list for everyone
-    io.emit("roomsList", {
+    io.emit("roomList", {
       rooms: getAllActiveRooms(),
     });
   });
